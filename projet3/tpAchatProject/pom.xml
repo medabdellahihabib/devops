@@ -18,11 +18,12 @@
     <description>tpAchatProject</description>
     
     <properties>
-        <java.version>11</java.version> <!-- Updated to Java 11 or higher as required -->
+        <java.version>11</java.version> <!-- Ensure compatibility with Java 11 or higher -->
         <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
         <jacoco.version>0.8.6</jacoco.version>
-        <sonar.projectKey>your_project_key</sonar.projectKey> <!-- Replace with your actual project key -->
-        <sonar.host.url>http://localhost:9001</sonar.host.url> <!-- Adjust to your SonarQube server URL -->
+        <sonar.projectKey>devops_project_g4</sonar.projectKey> <!-- Updated project key -->
+        <sonar.host.url>http://172.17.0.1:9000</sonar.host.url> <!-- Adjust to your SonarQube server URL -->
+        <sonar.login>squ_e86f1a6ce85515018c44ea488fd09d7a5d3404e1</sonar.login> <!-- SonarQube token -->
     </properties>
     
     <dependencies>
@@ -118,7 +119,7 @@
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.9.1.2184</version> <!-- Updated to a compatible version with Java 21 -->
+                <version>3.9.1.2184</version> <!-- Ensure compatibility -->
             </plugin>
         </plugins>
     </build>
