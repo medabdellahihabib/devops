@@ -26,6 +26,8 @@
         <sonar.projectKey>devops_project_g4</sonar.projectKey>
         <sonar.host.url>http://172.17.0.1:9000</sonar.host.url>
         <sonar.login>squ_e86f1a6ce85515018c44ea488fd09d7a5d3404e1</sonar.login>
+        <nexus.username>admin</nexus.username> <!-- Remplacez par votre nom d'utilisateur Nexus -->
+        <nexus.password>13051028</nexus.password> <!-- Remplacez par votre mot de passe Nexus -->
     </properties>
 
     <dependencies>
@@ -113,6 +115,12 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.2</version>
+                <configuration>
+                    <repositoryId>nexus</repositoryId>
+                    <url>http://172.17.0.1:8081/repository/tpAchatProject-releases/</url>
+                    <username>${nexus.username}</username>
+                    <password>${nexus.password}</password>
+                </configuration>
             </plugin>
         </plugins>
     </build>
