@@ -146,11 +146,11 @@
     <distributionManagement>
         <repository>
             <id>nexus</id>
-            <url>http://172.17.0.1:8081/repository/tpAchatProject-releases/</url>
+            <url>http://192.168.21.128:8081/repository/tpAchatProject-releases/</url>
         </repository>
         <snapshotRepository>
             <id>nexus-snapshots</id>
-            <url>http://172.17.0.1:8081/repository/tpAchatProject-snapshots/</url>
+            <url>http://192.168.21.128:8081/repository/tpAchatProject-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
