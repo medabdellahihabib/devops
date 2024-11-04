@@ -6,8 +6,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root    # Change to a secure password
       MYSQL_DATABASE: dbachat                # Name of the database for the app
-      MYSQL_USER: root                  # App-specific MySQL user
-      MYSQL_PASSWORD: root      # App-specific MySQL password
     ports:
       - "3306:3306"
     volumes:
