@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: tp_achat
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+    ports:
+      - "3306:3306"
+
+  spring_app:
+    image: your_dockerhub_username/tpachatproject:latest
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/tp_achat
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: userpassword
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
