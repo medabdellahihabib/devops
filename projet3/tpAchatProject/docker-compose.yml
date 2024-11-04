@@ -12,7 +12,7 @@ services:
       - "3306:3306"
 
   spring_app:
-    image: your_dockerhub_username/tpachatproject:latest
+    image: youssefxammar/tpachatproject:latest
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/tp_achat
       SPRING_DATASOURCE_USERNAME: user
