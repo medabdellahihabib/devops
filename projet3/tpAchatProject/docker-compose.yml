@@ -1,0 +1,40 @@
+services:
+  # MySQL Database Service
+  mysql-db:
+    image: mysql:8
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root    # Change to a secure password
+      MYSQL_DATABASE: dbachat                # Name of the database for the app
+      MYSQL_USER: root                  # App-specific MySQL user
+      MYSQL_PASSWORD: root      # App-specific MySQL password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+	  
+	   # Spring Boot Application Service
+  backend-app:
+    image: nyrouz911/devops:latest       # Replace with your Spring Boot app image name
+    container_name: backend-app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/dbachat
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQL8Dialect
+    ports:
+      - "8089:8089"
+    depends_on:
+      - mysql-db
+    networks:
+      - app-network
+	  
+	  # Define shared network and persistent volumes
+networks:
+  app-network:
+
+volumes:
+  mysql-data:
