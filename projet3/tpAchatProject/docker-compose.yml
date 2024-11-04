@@ -18,6 +18,6 @@ services:
       SPRING_DATASOURCE_USERNAME: user
       SPRING_DATASOURCE_PASSWORD: userpassword
     ports:
-      - "8080:8080"
+      - "9000:9000"
     depends_on:
       - mysql
