@@ -14,8 +14,7 @@ services:
       - mysql-data:/var/lib/mysql
     networks:
       - app-network
-	  
-	   # Spring Boot Application Service
+
   backend-app:
     image: nyrouz911/devops:latest       # Replace with your Spring Boot app image name
     container_name: backend-app
@@ -31,8 +30,7 @@ services:
       - mysql-db
     networks:
       - app-network
-	  
-	  # Define shared network and persistent volumes
+
 networks:
   app-network:
 
