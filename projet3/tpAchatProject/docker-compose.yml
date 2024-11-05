@@ -16,7 +16,7 @@ services:
       timeout: 5s
       retries: 5
 
-  spring_app:
+  springapp:
     image: youssefxammar/tpachatproject:latest
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/tp_achat
