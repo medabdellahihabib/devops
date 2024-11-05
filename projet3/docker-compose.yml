@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./tpAchatProject
+      dockerfile: Dockerfile.backend
+    image: medhabib634/tpachatproject_g4_ds3:latest
+    ports:
+      - "8082:8080"  # Utilisez un port comme 8082 pour éviter les conflits avec Jenkins (8080)
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3307/tpAchatDB
+      SPRING_DATASOURCE_USERNAME: my_username     # Remplacez par votre username
+      SPRING_DATASOURCE_PASSWORD: my_password     # Remplacez par votre mot de passe
+    depends_on:
+      - mysql
+
+  frontend:
+    build:
+      context: ./crud-tuto-front
+      dockerfile: Dockerfile.frontend
+    image: medhabib634/tpachatproject_g4_ds3_front:latest
+    ports:
+      - "3000:80" # Utilisez 3000 pour éviter les conflits éventuels
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password           # Changez si nécessaire
+      MYSQL_DATABASE: tpAchatDB
+      MYSQL_USER: my_username                      # Remplacez par le nom d'utilisateur de MySQL
+      MYSQL_PASSWORD: my_password                  # Remplacez par le mot de passe de MySQL
+    ports:
+      - "3307:3306"  # Exposez MySQL sur le port 3307
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
