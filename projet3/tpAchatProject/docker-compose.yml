@@ -36,7 +36,7 @@ services:
     ports:
       - "9090:9090"  # Prometheus UI
     depends_on:
-      - spring_app
+      - springapp
 
   grafana:
     image: grafana/grafana
