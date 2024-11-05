@@ -1,8 +1,8 @@
 global:
-  scrape_interval: 15s  # How often to scrape targets
+  scrape_interval: 15s  
 
 scrape_configs:
   - job_name: 'springapp'
     metrics_path: '/actuator/prometheus'
     static_configs:
-      - targets: ['springapp:4000']
+      - targets: ['springapp:4000'] 
