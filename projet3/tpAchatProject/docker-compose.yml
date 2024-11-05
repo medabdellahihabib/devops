@@ -10,6 +10,11 @@ services:
       MYSQL_PASSWORD: userpassword
     ports:
       - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   spring_app:
     image: youssefxammar/tpachatproject:latest
@@ -23,7 +28,6 @@ services:
       mysql:
         condition: service_healthy
     restart: on-failure 
-
 
   prometheus:
     image: prom/prometheus
