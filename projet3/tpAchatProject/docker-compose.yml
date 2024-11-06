@@ -22,8 +22,6 @@ services:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
       - /:/host:ro
-    networks:
-      - monitoring_network
 
   prometheus:
       image: prom/prometheus:latest
@@ -36,8 +34,6 @@ services:
       command:
         - "--config.file=/etc/prometheus/prometheus.yml"
       restart: unless-stopped
-      networks:
-        - monitoring_network
 
   grafana:
       image: grafana/grafana:latest
@@ -49,8 +45,6 @@ services:
       environment:
         - GF_SECURITY_ADMIN_PASSWORD=admin  # Default password (should be changed)
       restart: unless-stopped
-      networks:
-        - monitoring_network
   
   backend-app:
     image: nyrouz911/devops:latest      
@@ -69,6 +63,3 @@ volumes:
   prometheus_data:
   grafana_data:
   
-networks:
-  monitoring_network:
-  external: true 
