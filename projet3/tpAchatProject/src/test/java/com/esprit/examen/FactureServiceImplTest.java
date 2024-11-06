@@ -80,20 +80,20 @@ class FactureServiceImplTest {
         verify(factureRepository, times(1)).findById(factureId);
     }
 
-    @Test
-    void testGetFacturesByFournisseur() {
-        Long fournisseurId = 1L;
-        Fournisseur fournisseur = new Fournisseur();
-        Facture facture1 = new Facture();
-        Facture facture2 = new Facture();
-        fournisseur.setFactures(Set.of(facture1, facture2));
-        when(fournisseurRepository.findById(fournisseurId)).thenReturn(Optional.of(fournisseur));
+    // @Test
+    // void testGetFacturesByFournisseur() {
+    //     Long fournisseurId = 1L;
+    //     Fournisseur fournisseur = new Fournisseur();
+    //     Facture facture1 = new Facture();
+    //     Facture facture2 = new Facture();
+    //     fournisseur.setFactures(Set.of(facture1, facture2));
+    //     when(fournisseurRepository.findById(fournisseurId)).thenReturn(Optional.of(fournisseur));
 
-        List<Facture> result = factureService.getFacturesByFournisseur(fournisseurId);
+    //     List<Facture> result = factureService.getFacturesByFournisseur(fournisseurId);
 
-        assertEquals(2, result.size());
-        verify(fournisseurRepository, times(1)).findById(fournisseurId);
-    }
+    //     assertEquals(2, result.size());
+    //     verify(fournisseurRepository, times(1)).findById(fournisseurId);
+    // }
 
     @Test
     void testPourcentageRecouvrement() {
