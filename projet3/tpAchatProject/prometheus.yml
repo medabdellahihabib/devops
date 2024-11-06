@@ -4,3 +4,8 @@ scrape_configs:
     static_configs:
       - targets: ['springapp:4000']
 
+
+
+
+
+#end prometheus
