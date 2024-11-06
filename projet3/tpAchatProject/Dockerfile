@@ -1,7 +1,7 @@
 # Use a base image with JDK 17
 FROM openjdk:17-jdk-slim
 
-# Set environment variables
+# Set environment 
 ENV APP_HOME=/app
 WORKDIR $APP_HOME
 
