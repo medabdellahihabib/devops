@@ -45,7 +45,7 @@ services:
     depends_on:
       - prometheus
     volumes:
-      - grafana_data:/var/lib/grafana  # Persistent storage for Grafana data
+      - grafana_data:/var/lib/grafana  
 
 volumes:
   grafana_data:
