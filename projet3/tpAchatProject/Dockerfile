@@ -11,5 +11,5 @@ COPY target/*.jar app.jar
 # Expose the application port
 EXPOSE 4000
 
-# Run the application
+# Run the app
 ENTRYPOINT ["java", "-jar", "app.jar"]
