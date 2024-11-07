@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import com.esprit.examen.entities.SecteurActivite;
 import com.esprit.examen.services.ISecteurActiviteService;
 
-import io.swagger.annotations.Api;
+
 
 @RestController
-@Api(tags = "Gestion des secteurs activites")
+
 @RequestMapping("/secteurActivite")
 @CrossOrigin("*")
 public class SecteurActiviteController {
