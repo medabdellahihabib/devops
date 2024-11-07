@@ -9,11 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import com.esprit.examen.entities.Facture;
 import com.esprit.examen.services.IFactureService;
 
-import io.swagger.annotations.Api;
 
 
 @RestController
-@Api(tags = "Gestion des factures")
 @RequestMapping("/facture")
 @CrossOrigin("*")
 public class FactureRestController {
