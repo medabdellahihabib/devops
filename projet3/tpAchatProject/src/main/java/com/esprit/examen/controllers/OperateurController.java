@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import com.esprit.examen.entities.Operateur;
 import com.esprit.examen.services.IOperateurService;
 
-import io.swagger.annotations.Api;
 
 @RestController
-@Api(tags = "Gestion des opérateurs")
+
 @RequestMapping("/operateur")
 @CrossOrigin("*")
 public class OperateurController {
